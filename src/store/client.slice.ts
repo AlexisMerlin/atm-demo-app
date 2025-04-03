@@ -2,6 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { findClient } from './mockData';
 import { EnumCardType } from '@/types/EnumCardType';
 import { RootState } from './store';
+
+//TODO remove export when connecting to backend
 export interface Client {
   id: string;
   name: string;
@@ -9,7 +11,7 @@ export interface Client {
   cardType: EnumCardType;
 }
 
-export interface ClientState {
+interface ClientState {
   currentClient: Client | null;
   error: string | null;
 }
@@ -38,6 +40,5 @@ const clientSlice = createSlice({
 });
 
 export const { auth } = clientSlice.actions;
-//export const selectError = (state: RootState) => state.client.error;
 export const selectClient = (state: RootState) => state.client;
 export default clientSlice.reducer;

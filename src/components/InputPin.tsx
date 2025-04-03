@@ -15,9 +15,7 @@ export default function InputPin() {
       dispatch(setScreenMessage(clientState.error));
     }
     if (clientState.currentClient) {
-      dispatch(
-        setScreenMessage(`Hi ${clientState.currentClient.name}! Please select a choice...`),
-      );
+      dispatch(setScreenMessage(`Hi ${clientState.currentClient.name}! Please select a choice...`));
     }
   }, [clientState, dispatch]);
 
@@ -28,7 +26,7 @@ export default function InputPin() {
     }
   }
   return (
-    <div className='flex w-full justify-center gap-1 pl-10'>
+    <div className='relative z-50 flex w-full justify-center gap-1'>
       <input
         className='rounded-10 w-20 bg-slate-100'
         type='text'

@@ -1,4 +1,4 @@
-import AtmButton from "./AtmButton";
+import AtmButton from './AtmButton';
 
 export default function AtmButtonLayout() {
   return (

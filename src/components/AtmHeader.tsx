@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AtmHeader() {
   return (
-    <div className='relative flex h-fit w-full flex-col items-center rounded-xl border-t-4 border-indigo-800 bg-indigo-600 bg-gradient-to-b from-indigo-500 to-indigo-600 pb-3 shadow-lg drop-shadow-xl'>
+    <div className='relative flex h-fit w-full flex-col items-center rounded-xl border-t-4 border-indigo-800 bg-gradient-to-b from-indigo-500 to-indigo-600 pb-3 shadow-lg drop-shadow-xl'>
       <h1 className='align-text-top text-8xl font-semibold text-white font-stretch-extra-expanded'>
         ATM
       </h1>

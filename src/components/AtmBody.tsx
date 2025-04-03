@@ -3,7 +3,7 @@ import AtmScreenContainer from './ScreenComponents/AtmScreenContainer';
 
 export default function AtmBody() {
   return (
-    <div className='mx-5 h-svh w-9/10 bg-slate-100 pt-3'>
+    <div className='mx-5 h-svh w-9/10 pt-3 bg-gradient-to-b from-slate-200 to-slate-500 shadow-lg drop-shadow-xl'>
       <div className='flex w-full justify-center'>
         <div className='relative h-[40px] w-[25px] overflow-hidden'>
           <Image

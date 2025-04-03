@@ -1,3 +1,3 @@
 export default function AtmButtonLabel({ text, position }: { text: string; position: string }) {
-  return <div className={`${position} px-2 truncate`}>{text}</div>;
+  return <div className={`${position} truncate px-2`}>{text}</div>;
 }

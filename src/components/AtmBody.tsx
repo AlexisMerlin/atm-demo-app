@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import AtmScreenContainer from './ScreenComponents/AtmScreenContainer';
+import InputPin from './InputPin';
 
 export default function AtmBody() {
   return (
@@ -25,6 +26,7 @@ export default function AtmBody() {
         </div>
       </div>
       <AtmScreenContainer />
+      <InputPin />
     </div>
   );
 }

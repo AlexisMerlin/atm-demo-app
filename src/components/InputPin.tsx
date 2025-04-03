@@ -15,7 +15,9 @@ export default function InputPin() {
       dispatch(setScreenMessage(clientState.error));
     }
     if (clientState.currentClient) {
-      dispatch(setScreenMessage(`Hi ${clientState.currentClient.name}! Please select a choice...`));
+      dispatch(
+        setScreenMessage(`Hi ${clientState.currentClient.name}! Please select a choice...`),
+      );
     }
   }, [clientState, dispatch]);
 

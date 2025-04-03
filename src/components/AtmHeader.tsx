@@ -7,7 +7,6 @@ export default function AtmHeader() {
         ATM
       </h1>
       <h2 className='text-2xl font-semibold text-white uppercase'>24 hours banking</h2>
-      {/* Used for simulating volumen shadow */}
       <div className='absolute bottom-0 left-1/2 h-4 w-5/6 -translate-x-1/2 rounded-b-xl bg-black/30 blur-md'></div>
       <Image
         src='/graffiti.png'

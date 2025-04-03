@@ -3,15 +3,26 @@ import AtmScreenContainer from './ScreenComponents/AtmScreenContainer';
 
 export default function AtmBody() {
   return (
-    <div className='mx-5 w-9/10 bg-slate-100 h-svh'>
+    <div className='mx-5 h-svh w-9/10 bg-slate-100 pt-3'>
       <div className='flex w-full justify-center'>
-        <Image
-          src='/creditcard_sprite.png'
-          alt='credit card sprite'
-          width={200}
-          height={40}
-          className='opacity-50'
-        />
+        <div className='relative h-[40px] w-[25px] overflow-hidden'>
+          <Image
+            src='/creditcard_sprite.png'
+            alt='credit card sprite A'
+            width={200}
+            height={40}
+            className='max-w-[1000%] object-cover object-left'
+          />
+        </div>
+        <div className='relative h-[40px] w-[180px] overflow-hidden'>
+          <Image
+            src='/creditcard_sprite.png'
+            alt='credit card sprite'
+            width={200}
+            height={40}
+            className='translate-x-[-25px] object-cover object-left opacity-30'
+          />
+        </div>
       </div>
       <AtmScreenContainer />
     </div>

@@ -6,17 +6,17 @@ import Screen from './Screen';
 export default function AtmScreenContainer() {
   return (
     <div className='relative'>
-      <div className='grid w-full grid-cols-5 grid-rows-10 gap-y-2 border-2 border-slate-700'>
+      <div className='grid w-full grid-cols-[1fr_2fr_1fr_2fr_1fr] grid-rows-10 gap-y-2'>
         <Screen position='col-start-2 col-end-5 row-start-1 row-end-10' />
 
-        <AtmButton position='col-start-1 col-end-2 row-start-6 row-end-7' />
-        <AtmButton position='col-start-5 col-end-6 row-start-6 row-end-7' />
-        <AtmButton position='col-start-1 col-end-2 row-start-7 row-end-8' />
-        <AtmButton position='col-start-5 col-end-6 row-start-7 row-end-8' />
-        <AtmButton position='col-start-1 col-end-2 row-start-8 row-end-9' />
-        <AtmButton position='col-start-5 col-end-6 row-start-8 row-end-9' />
-        <AtmButton position='col-start-1 col-end-2 row-start-9 row-end-10' />
-        <AtmButton position='col-start-5 col-end-6 row-start-9 row-end-10' />
+        <AtmButton location='col-start-1 col-end-2 row-start-6 row-end-7 justify-end' />
+        <AtmButton location='col-start-5 col-end-6 row-start-6 row-end-7' />
+        <AtmButton location='col-start-1 col-end-2 row-start-7 row-end-8 justify-end' />
+        <AtmButton location='col-start-5 col-end-6 row-start-7 row-end-8' />
+        <AtmButton location='col-start-1 col-end-2 row-start-8 row-end-9 justify-end' />
+        <AtmButton location='col-start-5 col-end-6 row-start-8 row-end-9 ' />
+        <AtmButton location='col-start-1 col-end-2 row-start-9 row-end-10 justify-end' />
+        <AtmButton location='col-start-5 col-end-6 row-start-9 row-end-10' />
 
         <AtmButtonLabel
           text='action 1'
@@ -55,7 +55,7 @@ export default function AtmScreenContainer() {
           alt='Systems logo'
           width={60}
           height={5}
-          className='col-start-4 col-end-5 row-start-10 row-end-11 h-fit'
+          className='col-start-4 col-end-5 row-start-10 row-end-11 justify-self-end'
         />
       </div>
       <Image

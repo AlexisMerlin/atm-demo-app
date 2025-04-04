@@ -4,35 +4,35 @@ export default function AtmLabelLayout() {
   return (
     <>
       <AtmButtonLabel
-        text='action 1'
+        id='btn-1'
         position='col-start-2 col-end-3 row-start-6 row-end-7 justify-self-start'
       />
       <AtmButtonLabel
-        text='action 2'
+        id='btn-2'
         position='col-start-4 col-end-5 row-start-6 row-end-7 justify-self-end'
       />
       <AtmButtonLabel
-        text='action 3'
+        id='btn-3'
         position='col-start-2 col-end-3 row-start-7 row-end-8 justify-self-start'
       />
       <AtmButtonLabel
-        text='action 4'
+        id='btn-4'
         position='col-start-4 col-end-5 row-start-7 row-end-8 justify-self-end'
       />
       <AtmButtonLabel
-        text='action 5'
+        id='btn-5'
         position='col-start-2 col-end-3 row-start-8 row-end-9 justify-self-start'
       />
       <AtmButtonLabel
-        text='action 6'
+        id='btn-6'
         position='col-start-4 col-end-5 row-start-8 row-end-9 justify-self-end'
       />
       <AtmButtonLabel
-        text='action 7'
+        id='btn-7'
         position='col-start-2 col-end-3 row-start-9 row-end-10 justify-self-start'
       />
       <AtmButtonLabel
-        text='action 8'
+        id='btn-8'
         position='col-start-4 col-end-5 row-start-9 row-end-10 justify-self-end'
       />
     </>

@@ -1,6 +1,6 @@
 'use client';
 
-import { selectMessage } from '@/store/screen.slice';
+import { selectMessage } from '@/store/ui.slice';
 import { useSelector } from 'react-redux';
 
 export default function Screen({ position }: { position: string }) {

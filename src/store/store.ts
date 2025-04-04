@@ -1,12 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import clientReducer from './client.slice';
-import screenReducer from './screen.slice';
-
+import uiReducer from './ui.slice';
+import atmReducer from './atm.slice';
+import { uiListenerMiddleware } from './uiMiddleware';
 export const store = configureStore({
   reducer: {
     client: clientReducer,
-    screen: screenReducer,
+    ui: uiReducer,
+    atm: atmReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().prepend(uiListenerMiddleware.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

@@ -1,7 +1,7 @@
 'use client';
 
 import { auth, selectClient } from '@/store/client.slice';
-import { setScreenMessage } from '@/store/screen.slice';
+import { setScreenMessage } from '@/store/ui.slice';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 

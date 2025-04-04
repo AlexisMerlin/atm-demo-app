@@ -4,7 +4,7 @@ import NumPad from './NumPad';
 
 export default function AtmBody() {
   return (
-    <div className='mx-5 h-svh w-9/10 bg-gradient-to-b from-slate-200 to-slate-500 pt-3 shadow-lg drop-shadow-xl'>
+    <div className='mx-5 h-svh w-9/10 bg-gradient-to-b from-slate-200 to-slate-500 pt-1 shadow-lg drop-shadow-xl sm:pt-3'>
       <div className='flex w-full justify-center'>
         <div className='relative h-[40px] w-[25px] overflow-hidden'>
           <Image
@@ -26,7 +26,7 @@ export default function AtmBody() {
         </div>
       </div>
       <AtmScreenContainer />
-      
+
       <NumPad />
     </div>
   );

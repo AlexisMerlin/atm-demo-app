@@ -15,7 +15,7 @@ export function useATM() {
   useEffect(() => {
     if (atmState === 'auth') {
       if (clientState.error) {
-        dispatch(setScreenMessage(clientState.error.message));
+        dispatch(setScreenMessage({ primary: clientState.error.message }));
       }
       if (clientState.currentClient) {
         balanceRef.current = clientState.currentClient.balance;
@@ -31,7 +31,10 @@ export function useATM() {
       if (clientState.currentClient) {
         dispatch(resetError());
         dispatch(
-          setScreenMessage(`Hi ${clientState.currentClient.name}! Please select a choice...`),
+          setScreenMessage({
+            primary: `Hi ${clientState.currentClient.name}!`,
+            secondary: 'Please select a choice...',
+          }),
         );
       }
     }
@@ -39,22 +42,28 @@ export function useATM() {
     if (atmState === 'balance') {
       if (clientState.currentClient) {
         dispatch(
-          setScreenMessage(
-            `Your current balance is: $${clientState.currentClient.balance.toFixed(2)}`,
-          ),
+          setScreenMessage({
+            primary: `Your current balance is: $${clientState.currentClient.balance.toFixed(2)}`,
+          }),
         );
       }
     }
 
     if (atmState === 'withdraw') {
       if (clientState.error?.errorType === 'withdraw') {
-        dispatch(setScreenMessage(clientState.error.message));
+        dispatch(
+          setScreenMessage({
+            primary: clientState.error.message,
+            secondary: 'Please try again...',
+          }),
+        );
       }
       if (clientState.currentClient && clientState.currentClient.balance !== balanceRef.current) {
         dispatch(
-          setScreenMessage(
-            `Take you Cash! Your current balance is: $${clientState.currentClient.balance.toFixed(2)}`,
-          ),
+          setScreenMessage({
+            primary: 'Take you Cash!',
+            secondary: `Your current balance is: $${clientState.currentClient.balance.toFixed(2)}`,
+          }),
         );
         balanceRef.current = clientState.currentClient.balance;
       }
@@ -63,9 +72,9 @@ export function useATM() {
     if (atmState === 'deposit') {
       if (clientState.currentClient && clientState.currentClient.balance !== balanceRef.current) {
         dispatch(
-          setScreenMessage(
-            `Your current balance is: $${clientState.currentClient.balance.toFixed(2)}`,
-          ),
+          setScreenMessage({
+            primary: `Your current balance is: $${clientState.currentClient.balance.toFixed(2)}`,
+          }),
         );
         balanceRef.current = clientState.currentClient.balance;
       }
@@ -91,5 +100,9 @@ export function useATM() {
     }
   }
 
-  return { isReadyForInput, clientInput, setClientInput, handleAuthClient };
+  function handleClearInput() {
+    setClientInput('');
+  }
+
+  return { isReadyForInput, clientInput, setClientInput, handleAuthClient, handleClearInput };
 }

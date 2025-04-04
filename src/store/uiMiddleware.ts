@@ -14,7 +14,7 @@ uiListenerMiddleware.startListening({
 
 const uiStateByATMState: Record<ATMState, UiState> = {
   standby: {
-    message: 'Welcome to the ATM',
+    screen: { primary: 'Welcome to the ATM' },
     buttons: [
       {
         id: 'btn-8',
@@ -25,7 +25,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   auth: {
-    message: 'Please enter your PIN',
+    screen: { primary: 'Please enter your PIN' },
     buttons: [
       {
         id: 'btn-7',
@@ -36,7 +36,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   waiting: {
-    message: '',
+    screen: { primary: '' },
     buttons: [
       {
         id: 'btn-4',
@@ -71,7 +71,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   withdraw: {
-    message: 'Enter amount to withdraw',
+    screen: { primary: 'Enter amount to withdraw' },
     buttons: [
       {
         id: 'btn-4',
@@ -88,7 +88,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   deposit: {
-    message: 'Enter amount to deposit',
+    screen: { primary: 'Enter amount to deposit' },
     buttons: [
       {
         id: 'btn-4',
@@ -105,7 +105,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   balance: {
-    message: 'Balance',
+    screen: { primary: '' },
     buttons: [
       {
         id: 'btn-4',
@@ -122,7 +122,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   error: {
-    message: 'An error occurred. Please restart.',
+    screen: { primary: 'Error' },
     buttons: [],
   },
 };

@@ -9,13 +9,20 @@ interface Button {
   action?: ATMState;
 }
 
+interface Screen {
+  primary: string;
+  secondary?: string;
+}
+
 export interface UiState {
-  message: string;
+  screen: Screen;
   buttons: Button[];
 }
 
 const initialState: UiState = {
-  message: 'Welcome to the ATM',
+  screen: {
+    primary: 'Welcome to the ATM',
+  },
   buttons: [
     {
       id: 'btn-8',
@@ -31,22 +38,19 @@ const uiSlice = createSlice({
   initialState,
   reducers: {
     //Reducers for message may become unnecesary
-    setScreenMessage: (state, action: PayloadAction<string>) => {
-      state.message = action.payload;
-    },
-    resetScreenMessage: (state) => {
-      state.message = initialState.message;
+    setScreenMessage: (state, action: PayloadAction<Screen>) => {
+      state.screen = action.payload;
     },
     setUIState: (state, action: PayloadAction<UiState>) => {
       const newState = action.payload;
-      state.message = newState.message;
+      state.screen = newState.screen;
       state.buttons = newState.buttons;
     },
   },
 });
 
-export const { resetScreenMessage, setScreenMessage, setUIState } = uiSlice.actions;
-export const selectMessage = (state: RootState) => state.ui.message;
+export const { setScreenMessage, setUIState } = uiSlice.actions;
+export const selectMessage = (state: RootState) => state.ui.screen;
 export const selectButtons = (state: RootState) => state.ui.buttons;
 export const selectButtonById = (id: string) => (state: RootState) =>
   state.ui.buttons.find((btn) => btn.id === id);

@@ -26,7 +26,7 @@ export function useATM() {
       dispatch(
         setScreenMessage({
           primary: 'Enter amount to withdraw',
-          secondary: clientInput ? `$ ${parseFloat(clientInput).toFixed(2)}` : '$ 0.00',
+          secondary: clientInput ? `$ ${(parseFloat(clientInput) / 100).toFixed(2)}` : '$ 0.00',
         }),
       );
     }
@@ -35,7 +35,7 @@ export function useATM() {
       dispatch(
         setScreenMessage({
           primary: 'Enter amount to deposit',
-          secondary: clientInput ? `$ ${parseFloat(clientInput).toFixed(2)}` : '$ 0.00',
+          secondary: clientInput ? `$ ${(parseFloat(clientInput) / 100).toFixed(2)}` : '$ 0.00',
         }),
       );
     }
@@ -117,13 +117,13 @@ export function useATM() {
     }
 
     if (atmState === 'withdraw' && clientInput) {
-      const amount = parseFloat(clientInput);
+      const amount = parseFloat(clientInput) / 100;
       dispatch(withdraw(amount));
       setClientInput('');
     }
 
     if (atmState === 'deposit' && clientInput) {
-      const amount = parseFloat(clientInput);
+      const amount = parseFloat(clientInput) / 100;
       dispatch(deposit(amount));
       setClientInput('');
     }

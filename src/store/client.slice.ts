@@ -16,7 +16,7 @@ interface ClientError {
   message: string;
 }
 
-interface ClientState {
+export interface ClientState {
   currentClient: Client | null;
   error: ClientError | null;
 }

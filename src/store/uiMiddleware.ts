@@ -12,7 +12,7 @@ uiListenerMiddleware.startListening({
   },
 });
 
-const uiStateByATMState: Record<ATMState, UiState> = {
+export const uiStateByATMState: Record<ATMState, UiState> = {
   standby: {
     screen: { primary: 'Welcome to the ATM' },
     buttons: [
@@ -36,7 +36,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   waiting: {
-    screen: { primary: '' },
+    screen: { primary: 'Welcome' },
     buttons: [
       {
         id: 'btn-4',

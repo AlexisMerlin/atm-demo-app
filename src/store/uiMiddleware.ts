@@ -7,7 +7,6 @@ uiListenerMiddleware.startListening({
   actionCreator: setAtmState,
   effect: (action, listenerApi) => {
     const nextState = action.payload;
-    console.log('ATM state changed to:', nextState);
     const uiSate = uiStateByATMState[nextState];
     listenerApi.dispatch(setUIState(uiSate));
   },
@@ -29,7 +28,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     message: 'Please enter your PIN',
     buttons: [
       {
-        id: 'btn-1',
+        id: 'btn-7',
         label: 'Cancel',
         disabled: false,
         action: 'standby',
@@ -37,22 +36,37 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   waiting: {
-    message: 'Select a transaction',
+    message: '',
     buttons: [
       {
-        id: 'btn-2',
-        label: 'Withdraw',
-        disabled: false,
-      },
-      {
-        id: 'btn-3',
-        label: 'Deposit',
-        disabled: false,
-      },
-      {
         id: 'btn-4',
-        label: 'Balance',
+        label: 'Exit -',
         disabled: false,
+        action: 'standby',
+      },
+      {
+        id: 'btn-5',
+        label: '- Withdraw',
+        disabled: false,
+        action: 'withdraw',
+      },
+      {
+        id: 'btn-6',
+        label: 'Balance -',
+        disabled: false,
+        action: 'balance',
+      },
+      {
+        id: 'btn-7',
+        label: '- Deposit',
+        disabled: false,
+        action: 'deposit',
+      },
+      {
+        id: 'btn-8',
+        label: 'Re Enter PIN -',
+        disabled: false,
+        action: 'auth',
       },
     ],
   },

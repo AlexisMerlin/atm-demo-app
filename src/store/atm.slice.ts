@@ -38,4 +38,5 @@ export const atmSlice = createSlice({
 
 export const { setAtmState } = atmSlice.actions;
 export const selectAtmState = (state: { atm: AtmStateType }) => state.atm.state;
+export const isAtmInputState = (state: { atm: AtmStateType }) => state.atm.state === 'auth';
 export default atmSlice.reducer;

@@ -36,7 +36,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     ],
   },
   waiting: {
-    screen: { primary: '' },
+    screen: { primary: 'Welcome' },
     buttons: [
       {
         id: 'btn-4',

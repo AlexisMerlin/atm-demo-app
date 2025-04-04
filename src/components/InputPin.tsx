@@ -2,7 +2,7 @@
 
 import { useATM } from '@/hooks/atmHook';
 export default function InputPin() {
-  const { clientInput, handleAuthClient, isReadyForInput, setClientInput } = useATM();
+  const { clientInput, handleConfirm, isReadyForInput, setClientInput } = useATM();
   return (
     <div className='relative z-50 flex w-full justify-center gap-1'>
       <input
@@ -13,7 +13,7 @@ export default function InputPin() {
         value={clientInput}
         onChange={(e) => setClientInput(e.target.value)}
       />
-      <button onClick={handleAuthClient} disabled={!isReadyForInput}>
+      <button onClick={handleConfirm} disabled={!isReadyForInput}>
         ✔️
       </button>
     </div>

@@ -66,7 +66,7 @@ const uiStateByATMState: Record<ATMState, UiState> = {
         id: 'btn-8',
         label: 'Re Enter PIN -',
         disabled: false,
-        action: 'auth',
+        action: 'standby',
       },
     ],
   },

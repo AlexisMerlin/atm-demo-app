@@ -5,13 +5,42 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 export function useATM() {
-  const [clientInput, setClientInput] = useState('');
+  const [clientInput, setClientInput] = useState<string>('');
   const balanceRef = useRef(0);
   const clientState = useSelector(selectClient);
   const isReadyForInput = useSelector(isAtmInputState);
+  const atmState = useSelector(selectAtmState);
   const dispatch = useDispatch();
 
-  const atmState = useSelector(selectAtmState);
+  useEffect(() => {
+    if (atmState === 'auth') {
+      dispatch(
+        setScreenMessage({
+          primary: 'Please enter your PIN',
+          secondary: clientInput.split('').join(' '),
+        }),
+      );
+    }
+
+    if (atmState === 'withdraw') {
+      dispatch(
+        setScreenMessage({
+          primary: 'Enter amount to withdraw',
+          secondary: clientInput ? `$ ${parseFloat(clientInput).toFixed(2)}` : '$ 0.00',
+        }),
+      );
+    }
+
+    if (atmState === 'deposit') {
+      dispatch(
+        setScreenMessage({
+          primary: 'Enter amount to deposit',
+          secondary: clientInput ? `$ ${parseFloat(clientInput).toFixed(2)}` : '$ 0.00',
+        }),
+      );
+    }
+  }, [clientInput, atmState, dispatch]);
+
   useEffect(() => {
     if (atmState === 'auth') {
       if (clientState.error) {
@@ -81,7 +110,7 @@ export function useATM() {
     }
   }, [clientState, dispatch, atmState]);
 
-  function handleAuthClient() {
+  function handleConfirm() {
     if (atmState === 'auth' && clientInput) {
       dispatch(auth(clientInput));
       setClientInput('');
@@ -104,5 +133,5 @@ export function useATM() {
     setClientInput('');
   }
 
-  return { isReadyForInput, clientInput, setClientInput, handleAuthClient, handleClearInput };
+  return { isReadyForInput, clientInput, setClientInput, handleConfirm, handleClearInput };
 }

@@ -11,9 +11,14 @@ export interface Client {
   cardType: EnumCardType;
 }
 
+interface ClientError {
+  errorType: 'auth' | 'withdraw' | 'deposit' | 'balance';
+  message: string;
+}
+
 interface ClientState {
   currentClient: Client | null;
-  error: string | null;
+  error: ClientError | null;
 }
 
 const initialState: ClientState = {
@@ -28,17 +33,45 @@ const clientSlice = createSlice({
     auth: (state, action: PayloadAction<string>) => {
       try {
         const client = findClient(action.payload);
-        console.log(`Client Found ${JSON.stringify(client)}`);
         state.currentClient = client;
       } catch (error) {
         console.log(`Error ${error}`);
-        state.error = (error as Error).message;
+        const clientError: ClientError = {
+          errorType: 'auth',
+          message: 'Client not found',
+        };
+        state.error = clientError;
         state.currentClient = null;
       }
+    },
+    logout: (state) => {
+      state.currentClient = null;
+      state.error = null;
+    },
+    withdraw: (state, action: PayloadAction<number>) => {
+      if (state.currentClient) {
+        if (action.payload > state.currentClient.balance) {
+          const clientError: ClientError = {
+            errorType: 'withdraw',
+            message: 'Insufficient funds',
+          };
+          state.error = clientError;
+        } else {
+          state.currentClient.balance -= action.payload;
+        }
+      }
+    },
+    deposit: (state, action: PayloadAction<number>) => {
+      if (state.currentClient) {
+        state.currentClient.balance += action.payload;
+      }
+    },
+    resetError: (state) => {
+      state.error = null;
     },
   },
 });
 
-export const { auth } = clientSlice.actions;
+export const { auth, logout, withdraw, deposit, resetError } = clientSlice.actions;
 export const selectClient = (state: RootState) => state.client;
 export default clientSlice.reducer;

@@ -72,11 +72,37 @@ const uiStateByATMState: Record<ATMState, UiState> = {
   },
   withdraw: {
     message: 'Enter amount to withdraw',
-    buttons: [],
+    buttons: [
+      {
+        id: 'btn-4',
+        label: 'Exit -',
+        disabled: false,
+        action: 'standby',
+      },
+      {
+        id: 'btn-8',
+        label: 'Back -',
+        disabled: false,
+        action: 'waiting',
+      },
+    ],
   },
   deposit: {
     message: 'Enter amount to deposit',
-    buttons: [],
+    buttons: [
+      {
+        id: 'btn-4',
+        label: 'Exit -',
+        disabled: false,
+        action: 'standby',
+      },
+      {
+        id: 'btn-8',
+        label: 'Back -',
+        disabled: false,
+        action: 'waiting',
+      },
+    ],
   },
   balance: {
     message: 'Balance',

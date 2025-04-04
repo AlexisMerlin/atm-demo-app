@@ -9,7 +9,6 @@ export default function AtmButton({ location, id }: { location: string; id: stri
   const dispatch = useDispatch();
   function handleClick() {
     if (btn?.action) {
-      console.log('Dispatiching action: ', btn.action);
       dispatch(setAtmState(btn.action));
     }
   }

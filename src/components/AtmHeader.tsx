@@ -11,9 +11,9 @@ export default function AtmHeader() {
       <Image
         src='/graffiti.png'
         alt='graffiti-1'
-        width={200}
-        height={70}
-        className='absolute h-auto w-auto translate-x-15 translate-y-8 opacity-80'
+        width={207}
+        height={63}
+        className='absolute translate-x-15 translate-y-8 opacity-80'
       />
     </div>
   );

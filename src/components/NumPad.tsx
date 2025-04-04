@@ -28,7 +28,7 @@ export default function NumPad() {
   }, [clientInput, setClientInput, handleConfirm, isReadyForInput]);
 
   return (
-    <div className='relative z-50 flex w-full items-center justify-end px-15'>
+    <div className='flex w-full items-center justify-end px-15'>
       <div className='grid w-30 grid-cols-3 place-items-center gap-y-1 bg-slate-500 px-1 py-2 outline-2 outline-slate-300 sm:w-35'>
         {keys.map((num) => (
           <button

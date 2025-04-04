@@ -13,17 +13,17 @@ export default function AtmScreenContainer() {
         <Image
           src='/systems.png'
           alt='Systems logo'
-          width={60}
-          height={5}
-          className='col-start-4 col-end-5 row-start-10 row-end-11 h-auto w-auto justify-self-end'
+          width={54}
+          height={6}
+          className='col-start-4 col-end-5 row-start-10 row-end-11 h-auto w-[60px] justify-self-end'
         />
       </div>
       <Image
         src='/sticker_graf.png'
         alt='sticker graffiti'
-        width={150}
-        height={110}
-        className='absolute h-auto w-auto translate-x-7 -translate-y-10 opacity-80'
+        width={158}
+        height={112}
+        className='absolute translate-x-7 -translate-y-10 opacity-80'
       />
     </div>
   );

@@ -79,8 +79,21 @@ const uiStateByATMState: Record<ATMState, UiState> = {
     buttons: [],
   },
   balance: {
-    message: 'Your balance is being retrieved',
-    buttons: [],
+    message: 'Balance',
+    buttons: [
+      {
+        id: 'btn-4',
+        label: 'Exit -',
+        disabled: false,
+        action: 'standby',
+      },
+      {
+        id: 'btn-8',
+        label: 'Back -',
+        disabled: false,
+        action: 'waiting',
+      },
+    ],
   },
   error: {
     message: 'An error occurred. Please restart.',

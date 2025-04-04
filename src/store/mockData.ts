@@ -9,13 +9,13 @@ const clientsDB: Record<string, Client> = {
     name: 'Peter Parker',
   },
   '2345': {
-    balance: 1000,
+    balance: 10000,
     cardType: EnumCardType.DEBIT,
     id: 'id-fake-2',
     name: 'Harvey Osborn',
   },
   '9876': {
-    balance: 0,
+    balance: 100,
     cardType: EnumCardType.CREDIT,
     id: 'id-fake-3',
     name: 'Mary Jane Watson',

@@ -15,7 +15,7 @@ export default function AtmScreenContainer() {
           alt='Systems logo'
           width={60}
           height={5}
-          className='col-start-4 col-end-5 row-start-10 row-end-11 justify-self-end'
+          className='col-start-4 col-end-5 row-start-10 row-end-11 h-auto w-auto justify-self-end'
         />
       </div>
       <Image
@@ -23,7 +23,7 @@ export default function AtmScreenContainer() {
         alt='sticker graffiti'
         width={150}
         height={110}
-        className='absolute translate-x-7 -translate-y-10 opacity-80'
+        className='absolute h-auto w-auto translate-x-7 -translate-y-10 opacity-80'
       />
     </div>
   );

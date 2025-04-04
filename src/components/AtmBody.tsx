@@ -12,7 +12,7 @@ export default function AtmBody() {
             alt='credit card sprite A'
             width={200}
             height={40}
-            className='max-w-[1000%] object-cover object-left'
+            className='h-auto w-auto max-w-[1000%] object-cover object-left'
           />
         </div>
         <div className='relative h-[40px] w-[180px] overflow-hidden'>
@@ -21,7 +21,7 @@ export default function AtmBody() {
             alt='credit card sprite'
             width={200}
             height={40}
-            className='translate-x-[-25px] object-cover object-left opacity-30'
+            className='h-auto w-auto translate-x-[-25px] object-cover object-left opacity-30'
           />
         </div>
       </div>

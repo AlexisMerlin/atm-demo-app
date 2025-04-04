@@ -13,7 +13,7 @@ export default function AtmHeader() {
         alt='graffiti-1'
         width={200}
         height={70}
-        className='absolute translate-x-15 translate-y-8 opacity-80'
+        className='absolute h-auto w-auto translate-x-15 translate-y-8 opacity-80'
       />
     </div>
   );

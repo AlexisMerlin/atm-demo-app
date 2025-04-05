@@ -4,7 +4,8 @@ on:
     branches:
       - main
 jobs:
-  build:
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-22.04
     strategy:
       matrix:
@@ -24,3 +25,13 @@ jobs:
         run: npm run build
       - name: ReduxJS Store - Unit tests
         run: npm run test
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

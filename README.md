@@ -1,3 +1,5 @@
+[![NextJS APP deploy](https://github.com/AlexisMerlin/atm-demo-app/actions/workflows/main-deploy.yml/badge.svg)](https://github.com/AlexisMerlin/atm-demo-app/actions/workflows/main-deploy.yml)
+
 # ATM APP
 
 ATM APP is a virtual ATM machine simulation built with Next.js and Redux. This application allows users to interact with an ATM interface, enter their PIN, check their balance, and perform deposit and withdrawal transactions. The project demonstrates state management using Redux Toolkit, including slices for handling ATM state, client authentication, and UI updates.

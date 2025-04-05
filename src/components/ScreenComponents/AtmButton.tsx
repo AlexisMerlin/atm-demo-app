@@ -8,12 +8,14 @@ export default function AtmButton({ location, id }: { location: string; id: stri
   const btn = useSelector(selectButtonById(id));
   const dispatch = useDispatch();
   function handleClick() {
+    console.log('click');
     if (btn?.action) {
       dispatch(setAtmState(btn.action));
     }
   }
   return (
     <button
+      data-testid={`atm-button-${id}`}
       disabled={btn?.disabled ?? true}
       onClick={handleClick}
       className={`${location} flex px-2 transition-all duration-150 active:translate-y-[2px]`}

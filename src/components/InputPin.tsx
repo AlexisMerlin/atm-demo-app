@@ -1,6 +1,10 @@
 'use client';
 
 import { useATM } from '@/hooks/atmHook';
+/**
+ *
+ * @deprecated This component is deprecated 
+ */
 export default function InputPin() {
   const { clientInput, handleConfirm, isReadyForInput, setClientInput } = useATM();
   return (
